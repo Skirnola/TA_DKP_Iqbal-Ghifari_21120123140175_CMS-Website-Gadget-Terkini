@@ -1,27 +1,36 @@
 <?php
-include("templates/header.php");
-?>
+class Post {
+    private $conn;
+    private $id;
 
-<div class="post w-100 bg-light p-5">
-    <?php
-    $id = $_GET["id"];
-    if ($id) {
-        include("../connect.php");
-        $sqlSelectPost = "SELECT * FROM posts WHERE id = $id";
-        $result = mysqli_query($conn, $sqlSelectPost);
-        while ($data = mysqli_fetch_array($result)) {
-        ?>
-        <h1><?php echo $data['title']; ?></h1>
-        <p><?php echo $data['date']; ?></p>
-        <p><?php echo $data['content']; ?></p>
-        <?php
-        }
-    }else{
-        echo "Postingan Tidak Ditemukan";
+    public function __construct($id, $conn) {
+        $this->id = $id;
+        $this->conn = $conn;
     }
-    ?>
-</div>
 
-<?php
-include("templates/footer.php");
+    public function displayPost() {
+        $sqlSelectPost = "SELECT * FROM posts WHERE id = $this->id";
+        $result = mysqli_query($this->conn, $sqlSelectPost);
+        if ($data = mysqli_fetch_array($result)) {
+            ?>
+            <div class="post w-100 bg-light p-5">
+                <h1><?php echo $data['title']; ?></h1>
+                <p><?php echo $data['date']; ?></p>
+                <p><?php echo $data['content']; ?></p>
+            </div>
+            <?php
+        } else {
+            echo "Postingan Tidak Ditemukan";
+        }
+    }
+}
+
+$id = $_GET["id"];
+if ($id) {
+    include("../connect.php");
+    $post = new Post($id, $conn);
+    include("templates/header.php");
+    $post->displayPost();
+    include("templates/footer.php");
+}
 ?>
