@@ -47,7 +47,7 @@
         </div>
     </div>
     <div class="footer bg-dark p-4 mt-4">
-        <a href="admin/index.php" class="text-light text-decoration-none btn-admin">Panel Admin</a>
+        <a href="admin/login.php" class="text-light text-decoration-none btn-admin">Login</a>
 
         <a href="admin/index.php" class="text-light text-decoration-none btn-admin">Panel Admin</a>
     </div>
