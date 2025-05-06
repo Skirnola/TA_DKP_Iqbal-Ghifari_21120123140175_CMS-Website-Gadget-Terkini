@@ -21,4 +21,6 @@ if($id){
 } else {
     echo "Postingan Tidak Ditemukan";
 }
+
+<div><div></div></div>
 ?>
