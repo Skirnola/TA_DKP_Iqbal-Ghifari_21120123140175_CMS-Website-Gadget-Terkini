@@ -50,6 +50,12 @@ if (isset($_POST['login'])) {
                 <div class="form-field mb-4">
                     <input class="btn btn-primary w-100" type="submit" value="Login" name="login">
                 </div>
+
+                <div>
+                    <p>MANIBAS</p>
+
+                    <h2>COMIT</h2>
+                </div>
             </form>
         </div>
     </div>

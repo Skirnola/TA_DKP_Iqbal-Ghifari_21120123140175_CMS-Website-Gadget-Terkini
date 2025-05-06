@@ -17,6 +17,12 @@ include("templates/header.php");
                 <div class="form-field">
                     <input type="submit" class="btn btn-primary" value="Submit" name="create">
                 </div>
+
+                <div>
+                    <p>MANIBAS</p>
+
+                    <h2>COMIT</h2>
+                </div>
             </form>
         </div>
 <?php
